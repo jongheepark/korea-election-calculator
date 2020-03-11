@@ -1,2 +1,5 @@
 # korea-election-calculator
-Calculate the seat allocation based on the 2020 PR list rule
+2020년에 준연동형비례대표가 도입된 새로운 선거법에 따라 비례대표의석을 할당하는 알고리듬을 R로 구현한 것입니다. 
+코드는 세 가지 인풋이 필요합니다. 먼저 pr.vote.share는 각 당의 비례대표 득표율로 %가 아니라 1이하의 소숫점으로 입력해야 합니다. 
+두번째 인풋은 smd.seat으로 각 당의 지역구 의석입니다. 정수로 입력되어야 합니다. 
+마지막 인풋은 nonparty.district.winner로 무소속으로 당선자 수입니다.
