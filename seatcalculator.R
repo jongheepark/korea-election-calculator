@@ -32,23 +32,23 @@
     basic.formula <- ifelse( pr.vote.share < 0.03 & smd.seat < 5,
                             0, 
                             (yeondong*party.earned - smd.seat)*0.5 )
-    hwonsan <- ifelse(basic.formula < 1, 0,round(basic.formula))
-    ifelse(sum(hwonsan) > 30, 
-           resid <- 30 * basic.formula/sum(hwonsan),
-           resid <- (30 - sum(hwonsan))*party.earned)
+    hwansan <- ifelse(basic.formula < 1, 0,round(basic.formula))
+    ifelse(sum(hwansan) > 30, 
+           resid <- 30 * basic.formula/sum(hwansan),
+           resid <- (30 - sum(hwansan))*party.earned)
     resid1 <- ifelse(resid < 1, 0, resid)
     resid2 <- floor(resid1)
-    ifelse(sum(hwonsan)>30, 
+    ifelse(sum(hwansan)>30, 
            left <- 30 - sum(resid2), 
-           left <- 30 - sum(hwonsan) - sum(resid2) )
+           left <- 30 - sum(hwansan) - sum(resid2) )
     digit.big.order <- sort(resid1-resid2, decreasing = T, index.return=TRUE)$ix 
     resid3 <- rep(0, length(digit.big.order))
     for(i in 1:left){
         resid3[digit.big.order[i]] <- 1
     }
-    ifelse(sum(hwonsan)>30, 
+    ifelse(sum(hwansan)>30, 
            yeondongcap <- resid2 + resid3, 
-           yeondongcap <- hwonsan + resid2 + resid3)
+           yeondongcap <- hwansan + resid2 + resid3)
     
     ## 3. 병립형 17석 계산
     byunglib <- 17*party.earned
@@ -73,7 +73,7 @@
       # party.earned = party.earned,
       # yeondong.split = yeondong,
       # basic.formula = basic.formula,
-      # hwonsan = hwonsan,
+      # hwansan = hwansan,
       # resid = resid,
       # resid1 = resid1,
       # resid2 = resid2,
@@ -91,7 +91,7 @@
     
   }
 
- 
+## example run! 
 c1pr = c(25.54,33.5,26.79,14.17,0,0,0,0,0)/100
 c1smd = c(110,105,25,2,0,0,0,0,0)
 c1non = 11
@@ -122,6 +122,3 @@ seat.calculator(c3pr, c3smd, c3non)
 seat.calculator(c4pr, c4smd, c4non)
 seat.calculator(c5pr, c5smd, c5non)
 seat.calculator(c6pr, c6smd, c6non)
-
-
-
