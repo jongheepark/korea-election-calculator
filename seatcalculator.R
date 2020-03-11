@@ -1,12 +1,12 @@
+## written by JHP 2020-03-08
+## revised by Hoi Sung Jeong 2020-03-09
+
 "seat.calculator" <-
   function(
     ## 비례대표 국회의원 선거 득표비율 
-    pr.vote.share = c(40.40, 32.10, 4.10, 3.80, 4.40, 1.7, 1.1, 1.0, 1.5, 2,
-                  2, 2, 2, 1.9)/100 ,
-    
+    pr.vote.share = c(40.40, 32.10, 4.10, 3.80, 4.40, 1.7, 1.1, 1.0, 1.5, 2, 2, 2, 2, 1.9)/100 ,
     ## 지역구 의석수
-    smd.seat = c(116, 91, 7, 8, 2, 2, 3, 1, 3, 0, 
-             0, 0, 0, 0),
+    smd.seat = c(116, 91, 7, 8, 2, 2, 3, 1, 3, 0, 0, 0, 0, 0),
     
     ## 무소속 지역구 당선자
     nonparty.district.winner = 20
@@ -16,7 +16,8 @@
     n.party <- length(pr.vote.share)
     if(n.party!=length(smd.seat))
         stop("\n비례득표율과 지역구의석수의 정당수가 다릅니다! \n")
-    
+    if(sum(pr.vote.share)!=1)
+        stop("\npr.vote.share의 합은 1이 되어야 합니다! \n")
     ## 지역구 총의석수 확인
     if(253 != sum(smd.seat) + nonparty.district.winner)
         stop("\n지역구 의석수가 253이 아닙니다!\n")
@@ -68,10 +69,9 @@
         parallel.pr.seat = byunglibcap,
         partydist.nonpartydist.yeondong.byunglib = c(sum(smd.seat), nonparty.district.winner, 
                                                      sum(yeondongcap), sum(byunglibcap))
-                                        # for check
-                                        # ,
-                                        # party.earned = party.earned,
-                                        # yeondong.split = yeondong,
+      # for check 
+      # party.earned = party.earned,
+      # yeondong.split = yeondong,
       # basic.formula = basic.formula,
       # hwonsan = hwonsan,
       # resid = resid,
