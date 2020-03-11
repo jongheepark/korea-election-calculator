@@ -7,8 +7,27 @@
 - nonparty.district.winner: 무소속 지역구 당선자 수입니다. 총합계를 입력합니다.
  
 ```
+## example
 pr = c(25.54,33.5,26.79,14.17,0,0,0,0,0)/100
 smd = c(110,105,25,2,0,0,0,0,0)
 non = 11
 seat.calculator(pr, smd, non) 
+```
+
+위 코드를 구현하면 다음과 같은 결과가 나옵니다. 
+```
+$total.seat
+[1] 114 111  47  17   0   0   0   0   0
+
+$smd.seat
+[1] 110 105  25   2   0   0   0   0   0
+
+$semiyeondong.pr.seat
+[1]  0  0 17 13  0  0  0  0  0
+
+$parallel.pr.seat
+[1] 4 6 5 2 0 0 0 0 0
+
+$partydist.nonpartydist.yeondong.byunglib
+[1] 242  11  30  17
 ```
