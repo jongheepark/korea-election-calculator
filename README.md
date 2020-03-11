@@ -6,9 +6,9 @@
 - smd.seat: 각 당의 지역구 의석입니다. 정수로 입력되어야 합니다. 
 - nonparty.district.winner: 무소속 지역구 당선자 수입니다. 총합계를 입력합니다.
  
-<script>
+```
 pr = c(25.54,33.5,26.79,14.17,0,0,0,0,0)/100
 smd = c(110,105,25,2,0,0,0,0,0)
 non = 11
 seat.calculator(pr, smd, non) 
-<\script> 
+```
