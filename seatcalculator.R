@@ -90,35 +90,3 @@
     return(outcome)
     
   }
-
- 
-c1pr = c(25.54,33.5,26.79,14.17,0,0,0,0,0)/100
-c1smd = c(110,105,25,2,0,0,0,0,0)
-c1non = 11
-
-c2pr = c(50,0,25,17,0,0,0,0,0)/100
-c2smd = c(130,120,0,3,0,0,0,0,0)
-c2non = 0
-
-c3pr = c(42.64,37.85,4.83,4.48,5.19,5,0,0,0)/100
-c3smd = c(141,85,7,8,2,7,0,0,0)
-c3non = 3
-
-c4pr = c(48.75,38.79,4.98,3.8,2.49,1.19,0,0,0)/100
-c4smd = c(116,98,2,4,5,7,0,0,0)
-c4non = 21
-
-c5pr = c(33,23,25,12,3,3,1,0,0)/100
-c5smd = c(116,98,3,2,4,0,11,0,0)
-c5non = 19
-
-c6pr = c(38.37,0,29.07,13.95,3.49,3.49,1.16,3.49,3.49)/100
-c6smd = c(116,98,3,2,4,0,11,0,0)
-c6non = 19
-
-seat.calculator(c1pr, c1smd, c1non)
-seat.calculator(c2pr, c2smd, c2non)
-seat.calculator(c3pr, c3smd, c3non)
-seat.calculator(c4pr, c4smd, c4non)
-seat.calculator(c5pr, c5smd, c5non)
-seat.calculator(c6pr, c6smd, c6non)
