@@ -53,7 +53,7 @@
     ## 3. 병립형 17석 계산
     byunglib <- 17*party.earned
     byunglib2 <- floor(byunglib)
-    bl.order <- sort(byunglib-byunglib2, decreasing = T, index.return=TRUE)$ix ;bl.order
+    bl.order <- sort(byunglib-byunglib2, decreasing = T, index.return=TRUE)$ix 
     left2 <- 17 - sum(byunglib2)
     byunglib3 <- rep(0, length(bl.order))
     for(i in 1:left2){
@@ -91,7 +91,7 @@
     
   }
 
-## example run! 
+ 
 c1pr = c(25.54,33.5,26.79,14.17,0,0,0,0,0)/100
 c1smd = c(110,105,25,2,0,0,0,0,0)
 c1non = 11
